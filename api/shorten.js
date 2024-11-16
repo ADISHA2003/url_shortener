@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
             // Insert long URL and short code into the database
             await pool.query('INSERT INTO urls (long_url, short_code) VALUES ($1, $2)', [longUrl, shortCode]);
 
-            const baseUrl = `https://${process.env.VERCEL_URL || 'localhost:5000'}`;
+            const baseUrl = 'https://url2003.vercel.app';
 
             // Send back the short URL
             res.json({ shortUrl: `${baseUrl}/api/r/${shortCode}` });

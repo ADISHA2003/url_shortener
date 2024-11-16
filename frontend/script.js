@@ -8,7 +8,7 @@ document.getElementById('shortenBtn').addEventListener('click', async () => {
 
     try {
         // Fetch the shortened URL from the backend
-        const response = await fetch('https://url2003.vercel.app/api/shorten', {
+        const response = await fetch('https://localhost:5000/api/shorten', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ longUrl }),

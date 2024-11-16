@@ -1,0 +1,120 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'familjen grotesk', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container styles */
+.container {
+    background: #ffffff;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Header styles */
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+.header p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Input and button styles */
+.url-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.url-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #6a11cb;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.url-form input:focus {
+    border-color: #2575fc;
+}
+
+.url-form button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.url-form button:hover {
+    background: #2575fc;
+}
+
+/* Result section */
+.result {
+    margin-top: 20px;
+}
+
+.result p {
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+.result .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.result button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #2575fc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.result button:hover {
+    background: #6a11cb;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #ddd;
+}

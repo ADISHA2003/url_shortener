@@ -1,4 +1,4 @@
-// routes/api.js
+// api.js
 const express = require('express');
 const pool = require('../db/pool');
 const crypto = require('crypto');
@@ -31,13 +31,13 @@ router.post('/shorten', async (req, res) => {
         // Insert long URL and short code into the database
         await pool.query('INSERT INTO urls (long_url, short_code) VALUES ($1, $2)', [longUrl, shortCode]);
 
-        // Use the VERCEL_URL environment variable for production
-        const baseUrl = process.env.BASE_URL || `https://${process.env.VERCEL_URL || 'localhost:5000'}`;
+        // Hardcoded base URL for production
+        const baseUrl = 'https://url2003.vercel.app';
 
-        console.log('Shortened URL:', `${baseUrl}/r/${shortCode}`); // Debugging line
+        console.log('Shortened URL:', `${baseUrl}/api/r/${shortCode}`); // Debugging line
 
         // Send back the short URL
-        res.json({ shortUrl: `${baseUrl}/r/${shortCode}` });
+        res.json({ shortUrl: `${baseUrl}/api/r/${shortCode}` });
     } catch (err) {
         console.error(err.message);
         res.status(500).json({ error: 'Server error' });

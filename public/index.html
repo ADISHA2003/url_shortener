@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Offside&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <input type="text" id="longUrl" placeholder="Enter URL here" />
+        <button id="shortenBtn">Shorten URL</button>
+        <div id="shortUrlContainer">
+            <p>Shortened URL:</p>
+            <span id="shortUrl"></span>
+            <div class="actions">
+                <button id="copyBtn">Copy</button>
+                <button id="openBtn">Open</button>
+            </div>
+        </div>        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

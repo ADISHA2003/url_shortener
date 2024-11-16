@@ -3,7 +3,7 @@ const pool = require('../../db/pool');  // Database connection
 
 module.exports = async (req, res) => {
     try {
-        const { shortCode } = req.query;  // Access shortCode from query params
+        const { shortCode } = req.params;  // Access shortCode from route params
         const result = await pool.query('SELECT long_url FROM urls WHERE short_code = $1', [shortCode]);
 
         if (result.rows.length > 0) {

@@ -7,13 +7,24 @@ document.getElementById('shortenBtn').addEventListener('click', async () => {
     }
 
     try {
+        // Fetch the shortened URL from the backend
         const response = await fetch('https://url2003.vercel.app/api/shorten', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ longUrl }),
         });
 
+        // Check if the response was successful
+        if (!response.ok) {
+            throw new Error('Failed to shorten URL');
+        }
+
         const data = await response.json();
+
+        // If there is no short URL in the response, handle this case
+        if (!data.shortUrl) {
+            throw new Error('Invalid response from server');
+        }
 
         // Display the shortened URL
         const shortUrl = data.shortUrl;
@@ -41,6 +52,6 @@ document.getElementById('shortenBtn').addEventListener('click', async () => {
 
     } catch (err) {
         console.error(err);
-        alert('Error shortening URL');
+        alert('Error shortening URL: ' + err.message);
     }
 });
